@@ -1,0 +1,32 @@
+package com.lockedmeproject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+
+public class LockedMe {
+    // Location Files
+	static final String location="E:\\yoonus\\phase 1 project\\LockedMeFiles";
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String nameOfFile;
+		Scanner obj=new Scanner(System.in);
+		System.out.println("Enter the file that has to be deleted");
+		nameOfFile=obj.nextLine();
+		
+		boolean toDelete=FileManagerRepository.deleteFiles(location, nameOfFile);
+		
+		if(toDelete) {
+			System.out.println("File has been deleted successfully");
+		}
+		else {
+			System.out.println("there is no such files in the directory ");
+		}
+		
+
+	}
+
+}

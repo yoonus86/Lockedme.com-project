@@ -1,0 +1,47 @@
+package com.lockedmeproject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+
+
+public class LockedMe {
+    // Location Files
+	static final String location="E:\\yoonus\\phase 1 project\\LockedMeFiles";
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner obj=new Scanner(System.in);
+		String nameOftheFile;
+		int lines;
+		List<String> sentences=new ArrayList<String>();
+		
+		//Fetch the file name from the input
+		System.out.println("Enter the file name : ");
+		nameOftheFile=obj.nextLine();
+		
+		// specify the number of line to add to the file
+		System.out.println("Enter how many lines to add to the file");
+		lines=Integer.parseInt(obj.nextLine());
+		
+		//adding the content into teh file 
+		for(int i=1;i<=lines;i++) {
+			System.out.println(i+ " : ");
+			sentences.add(obj.nextLine());
+		}
+		
+		boolean saveTheWords=FileManagerRepository.addSentenceToFile(location, nameOftheFile, sentences);
+		
+		if(saveTheWords) {
+			System.out.println("All lines are successfully added to the file");
+		}
+		else {
+			System.out.println("Lines are not added to the files");
+		}
+		obj.close();
+		
+
+	}
+
+}

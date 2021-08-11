@@ -1,0 +1,20 @@
+package com.lockedmeproject;
+
+import java.util.List;
+
+public class LockedMe {
+    // Location Files
+	static final String location="E:\\yoonus\\phase 1 project\\LockedMeFiles";
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> fileNames=FileManagerRepository.retrieveAllFiles(location);
+		
+		for(String f:fileNames) {
+			System.out.println(f);
+		}
+		
+
+	}
+
+}
